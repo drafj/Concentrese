@@ -5,12 +5,15 @@ using UnityEngine;
 public class CardsControler : MonoBehaviour
 {
     public bool show = false;
+    public bool materialFinded = false;
     public int textureRand;
     public static int[] counters = new int[8];
 
     void Start()
     {
         textureRand = Random.Range(0,8);
+
+        StartCoroutine(MaterialAssigner());
     }
 
     void Hide()
@@ -35,6 +38,7 @@ public class CardsControler : MonoBehaviour
                     {
                         gameObject.GetComponent<Renderer>().material = General.staticMaterial1;
                         ++counters[0];
+                        materialFinded = true;
                         StopCoroutine(MaterialAssigner());
                     }
                     else
@@ -45,6 +49,7 @@ public class CardsControler : MonoBehaviour
                     {
                         gameObject.GetComponent<Renderer>().material = General.staticMaterial2;
                         ++counters[1];
+                        materialFinded = true;
                         StopCoroutine(MaterialAssigner());
                     }
                     else
@@ -55,6 +60,7 @@ public class CardsControler : MonoBehaviour
                     {
                         gameObject.GetComponent<Renderer>().material = General.staticMaterial3;
                         ++counters[2];
+                        materialFinded = true;
                         StopCoroutine(MaterialAssigner());
                     }
                     else
@@ -65,6 +71,7 @@ public class CardsControler : MonoBehaviour
                     {
                         gameObject.GetComponent<Renderer>().material = General.staticMaterial4;
                         ++counters[3];
+                        materialFinded = true;
                         StopCoroutine(MaterialAssigner());
                     }
                     else
@@ -75,6 +82,7 @@ public class CardsControler : MonoBehaviour
                     {
                         gameObject.GetComponent<Renderer>().material = General.staticMaterial5;
                         ++counters[4];
+                        materialFinded = true;
                         StopCoroutine(MaterialAssigner());
                     }
                     else
@@ -85,6 +93,7 @@ public class CardsControler : MonoBehaviour
                     {
                         gameObject.GetComponent<Renderer>().material = General.staticMaterial6;
                         ++counters[5];
+                        materialFinded = true;
                         StopCoroutine(MaterialAssigner());
                     }
                     else
@@ -95,6 +104,7 @@ public class CardsControler : MonoBehaviour
                     {
                         gameObject.GetComponent<Renderer>().material = General.staticMaterial7;
                         ++counters[6];
+                        materialFinded = true;
                         StopCoroutine(MaterialAssigner());
                     }
                     else
@@ -105,18 +115,21 @@ public class CardsControler : MonoBehaviour
                     {
                         gameObject.GetComponent<Renderer>().material = General.staticMaterial8;
                         ++counters[7];
+                        materialFinded = true;
                         StopCoroutine(MaterialAssigner());
                     }
                     else
                         textureRand = Random.Range(0, 8);
                     break;
             }
+            yield return new WaitForSeconds(0.01f);
         }
     }
 
     private void Update() 
     {
-        
+        if (materialFinded)
+            StopAllCoroutines();
 
         if (show)
             transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, Vector3.up * 180, 2 * Time.deltaTime));
