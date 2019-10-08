@@ -17,22 +17,20 @@ public class CardsControler : MonoBehaviour
         StartCoroutine(MaterialAssigner());
     }
 
-    void Hide()
-    {
-        show = false;
-    }
-
     void OnMouseDown()
     {
         show = true;
         if (General.cubesVerificator[0] == null)
         General.cubesVerificator[0] = gameObject;
-        else
+        else if (General.cubesVerificator[1] == null)
         {
             General.cubesVerificator[1] = gameObject;
             Verification();
         }
-        Invoke("Hide",4);
+        else
+        {
+            show = false;
+        }
     }
 
     public void Verification()
@@ -43,6 +41,7 @@ public class CardsControler : MonoBehaviour
         }
         else
         {
+            show = false;
             General.cubesVerificator[0] = null;
             General.cubesVerificator[1] = null;
         }
