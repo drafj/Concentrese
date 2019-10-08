@@ -158,8 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!23 &125003470
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -301,8 +301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!114 &275865406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,8 +316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!114 &353167927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,8 +331,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!23 &386641173
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -520,8 +520,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!33 &743356254
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -627,8 +627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &798788606
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,8 +675,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!23 &798788609
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -841,14 +841,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e7e3de41129014bb5b941a02150b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibleMaterial1: {fileID: 2100000, guid: dcea5ec3f61e8224fb10709ae338d67d, type: 2}
-  visibleMaterial2: {fileID: 2100000, guid: 3e79daa68a360f140885803f9dadc7ab, type: 2}
-  visibleMaterial3: {fileID: 2100000, guid: 564840dc9685e464eab325a91b0be85a, type: 2}
-  visibleMaterial4: {fileID: 2100000, guid: 87ccdefe141e1834a8a5afab8c582c82, type: 2}
-  visibleMaterial5: {fileID: 2100000, guid: eea76e38a73af0c4ebd7a51dc555888b, type: 2}
-  visibleMaterial6: {fileID: 2100000, guid: c41c02a958c71ce458e516a14cdb874a, type: 2}
-  visibleMaterial7: {fileID: 2100000, guid: a6e6e26c0ce6519468a6c7cea5bd4469, type: 2}
-  visibleMaterial8: {fileID: 2100000, guid: afd15d9553390f4499538f4bfed90365, type: 2}
+  visibleMaterials:
+  - {fileID: 2100000, guid: dcea5ec3f61e8224fb10709ae338d67d, type: 2}
+  - {fileID: 2100000, guid: 3e79daa68a360f140885803f9dadc7ab, type: 2}
+  - {fileID: 2100000, guid: 564840dc9685e464eab325a91b0be85a, type: 2}
+  - {fileID: 2100000, guid: 87ccdefe141e1834a8a5afab8c582c82, type: 2}
+  - {fileID: 2100000, guid: eea76e38a73af0c4ebd7a51dc555888b, type: 2}
+  - {fileID: 2100000, guid: c41c02a958c71ce458e516a14cdb874a, type: 2}
+  - {fileID: 2100000, guid: a6e6e26c0ce6519468a6c7cea5bd4469, type: 2}
+  - {fileID: 2100000, guid: afd15d9553390f4499538f4bfed90365, type: 2}
 --- !u!4 &898324261
 Transform:
   m_ObjectHideFlags: 0
@@ -973,8 +974,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1092149225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,8 +1022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!23 &1092149228
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1095,8 +1096,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!33 &1305056695
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1327,8 +1328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!23 &1595237291
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1618,8 +1619,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!23 &1769524100
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1784,8 +1785,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &2022627724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,8 +1833,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!23 &2022627727
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1939,8 +1940,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show: 0
+  materialFinded: 0
   textureRand: 0
-  counters: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!23 &2093053675
 MeshRenderer:
   m_ObjectHideFlags: 0
