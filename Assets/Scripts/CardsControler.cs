@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardsControler : MonoBehaviour
 {
+    public Text timeText;
+    public float time;
     public bool show = false;
     public bool materialFinded = false;
     public static bool lockMouse = false;
+    public static bool lockTime = false;
     public int textureRand;
     public static int[] counters = new int[8];
     public CubesID mID;
@@ -14,6 +18,8 @@ public class CardsControler : MonoBehaviour
     void Awake()
     {
         textureRand = Random.Range(0,8);
+        timeText = GameObject.Find("TimeText").GetComponent<Text>();
+        time = 3;
     }
     void Start()
     {
@@ -160,10 +166,25 @@ public class CardsControler : MonoBehaviour
 
     private void Update() 
     {
+        if (time <= 0)
+        {
+            lockMouse = true;
+            lockTime = true;
+            if (General.cubesVerificator[0] != null)
+                General.cubesVerificator[0].gameObject.GetComponent<CardsControler>().show = false;
+            if (General.cubesVerificator[1] != null)
+                General.cubesVerificator[1].gameObject.GetComponent<CardsControler>().show = false;
+
+        }
+
         if (show)
             transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, Vector3.up * 180, 2 * Time.deltaTime));
         else
             transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, Vector3.zero, 2 * Time.deltaTime));
+        if (!lockTime)
+        time -= Time.deltaTime;
+
+        timeText.text = "Time Remaning: " + time.ToString("f0");
     }
 }
 
