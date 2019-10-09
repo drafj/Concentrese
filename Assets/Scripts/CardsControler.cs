@@ -11,69 +11,13 @@ public class CardsControler : MonoBehaviour
     public static int[] counters = new int[8];
     public CubesID mID;
 
-    void Start()
+    void Awake()
     {
         textureRand = Random.Range(0,8);
-
-        StartCoroutine(MaterialAssigner());
     }
-
-    void OnMouseDown()
+    void Start()
     {
-        if (!lockMouse)
-        {
-            show = true;
-            if (General.cubesVerificator[0] == null)
-                General.cubesVerificator[0] = gameObject;
-            else if (/*General.cubesVerificator[1] == null && */gameObject != General.cubesVerificator[0])
-            {
-                General.cubesVerificator[1] = gameObject;
-                Verification();
-            }
-        }
-    }
-
-    public void Verification()
-    {
-        if (General.cubesVerificator[0].GetComponent<CardsControler>().mID == General.cubesVerificator[1].GetComponent<CardsControler>().mID)
-        {
-            //StartCoroutine(CubeDestroyer(General.cubesVerificator[0].gameObject, General.cubesVerificator[1].gameObject));
-            lockMouse = true;
-            Invoke("CubeDestroy", 1.7f);
-        }
-        else
-        {
-            lockMouse = true;
-            Invoke("NoConcidence", 1.7f);
-        }
-    }
-
-    public void CubeDestroy()
-    {
-        Destroy(General.cubesVerificator[0].gameObject);
-        Destroy(General.cubesVerificator[1].gameObject);
-        lockMouse = false;
-    }
-
-    public void NoConcidence()
-    {
-        General.cubesVerificator[0].gameObject.GetComponent<CardsControler>().show = false;
-        General.cubesVerificator[1].gameObject.GetComponent<CardsControler>().show = false;
-        General.cubesVerificator[0] = null;
-        General.cubesVerificator[1] = null;
-        lockMouse = false;
-    }
-
-    //IEnumerator CubeDestroyer(GameObject uno, GameObject dos)
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    Destroy(uno);
-    //    Destroy(dos);
-    //}
-
-    IEnumerator MaterialAssigner()
-    {
-        while (true)
+        while (!materialFinded)
         {
             switch (textureRand)
             {
@@ -166,21 +110,60 @@ public class CardsControler : MonoBehaviour
                         textureRand = Random.Range(0, 8);
                     break;
             }
-            yield return new WaitForSeconds(0.01f);
         }
+    }
+
+    void OnMouseDown()
+    {
+        if (!lockMouse)
+        {
+            show = true;
+            if (General.cubesVerificator[0] == null)
+                General.cubesVerificator[0] = gameObject;
+            else if (gameObject != General.cubesVerificator[0])
+            {
+                General.cubesVerificator[1] = gameObject;
+                Verification();
+            }
+        }
+    }
+
+    public void Verification()
+    {
+        if (General.cubesVerificator[0].GetComponent<CardsControler>().mID == General.cubesVerificator[1].GetComponent<CardsControler>().mID)
+        {
+            lockMouse = true;
+            Invoke("CubeDestroy", 1.7f);
+        }
+        else
+        {
+            lockMouse = true;
+            Invoke("NoConcidence", 1.7f);
+        }
+    }
+
+    public void CubeDestroy()
+    {
+        Destroy(General.cubesVerificator[0].gameObject);
+        Destroy(General.cubesVerificator[1].gameObject);
+        lockMouse = false;
+    }
+
+    public void NoConcidence()
+    {
+        General.cubesVerificator[0].gameObject.GetComponent<CardsControler>().show = false;
+        General.cubesVerificator[1].gameObject.GetComponent<CardsControler>().show = false;
+        General.cubesVerificator[0] = null;
+        General.cubesVerificator[1] = null;
+        lockMouse = false;
     }
 
     private void Update() 
     {
-        if (materialFinded)
-            StopAllCoroutines();
-
         if (show)
             transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, Vector3.up * 180, 2 * Time.deltaTime));
         else
             transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, Vector3.zero, 2 * Time.deltaTime));
-
-        
     }
 }
 
