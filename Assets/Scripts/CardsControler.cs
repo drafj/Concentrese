@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CardsControler : MonoBehaviour
 {
+    public Image timeUp;
     public Text timeText;
     public float time;
     public bool show = false;
@@ -19,10 +20,12 @@ public class CardsControler : MonoBehaviour
     {
         textureRand = Random.Range(0,8);
         timeText = GameObject.Find("TimeText").GetComponent<Text>();
-        time = 3;
+        timeUp = GameObject.Find("TimeUp").GetComponent<Image>();
+        time = 80;
     }
     void Start()
     {
+        timeUp.GetComponent<Image>().gameObject.SetActive(false);
         while (!materialFinded)
         {
             switch (textureRand)
@@ -153,6 +156,7 @@ public class CardsControler : MonoBehaviour
         Destroy(General.cubesVerificator[0].gameObject);
         Destroy(General.cubesVerificator[1].gameObject);
         lockMouse = false;
+        ++General.winConditional;
     }
 
     public void NoConcidence()
@@ -174,8 +178,11 @@ public class CardsControler : MonoBehaviour
                 General.cubesVerificator[0].gameObject.GetComponent<CardsControler>().show = false;
             if (General.cubesVerificator[1] != null)
                 General.cubesVerificator[1].gameObject.GetComponent<CardsControler>().show = false;
-
+            timeUp.GetComponent<Image>().gameObject.SetActive(true);
         }
+
+
+
 
         if (show)
             transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, Vector3.up * 180, 2 * Time.deltaTime));
