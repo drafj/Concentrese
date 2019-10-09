@@ -7,7 +7,7 @@ public class CardsControler : MonoBehaviour
 {
     public Image timeUp;
     public Text timeText;
-    public float time;
+    public static float time;
     public bool show = false;
     public bool materialFinded = false;
     public static bool lockMouse = false;
@@ -21,7 +21,6 @@ public class CardsControler : MonoBehaviour
         textureRand = Random.Range(0,8);
         timeText = GameObject.Find("TimeText").GetComponent<Text>();
         timeUp = GameObject.Find("TimeUp").GetComponent<Image>();
-        time = 80;
     }
     void Start()
     {
@@ -165,12 +164,13 @@ public class CardsControler : MonoBehaviour
         General.cubesVerificator[1].gameObject.GetComponent<CardsControler>().show = false;
         General.cubesVerificator[0] = null;
         General.cubesVerificator[1] = null;
+        --HardLevel.attemptsCounter;
         lockMouse = false;
     }
 
     private void Update() 
     {
-        if (time <= 0)
+        if (time <= 0 || HardLevel.attemptsCounter == 0)
         {
             lockMouse = true;
             lockTime = true;
@@ -191,7 +191,7 @@ public class CardsControler : MonoBehaviour
         if (!lockTime)
         time -= Time.deltaTime;
 
-        timeText.text = "Time Remaning: " + time.ToString("f0");
+        timeText.text = "Time Remaining: " + time.ToString("f0");
     }
 }
 

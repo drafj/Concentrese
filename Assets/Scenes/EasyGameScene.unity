@@ -851,6 +851,7 @@ GameObject:
   - component: {fileID: 850937973}
   - component: {fileID: 850937972}
   - component: {fileID: 850937976}
+  - component: {fileID: 850937977}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -953,6 +954,19 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a6e6e26c0ce6519468a6c7cea5bd4469, type: 2}
   - {fileID: 2100000, guid: afd15d9553390f4499538f4bfed90365, type: 2}
   win: {fileID: 577675744}
+--- !u!114 &850937977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850937971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff44b1255bd2dd948aedc0cb49543c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attemptsText: {fileID: 0}
 --- !u!4 &898324261
 Transform:
   m_ObjectHideFlags: 0
