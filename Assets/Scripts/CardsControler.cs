@@ -6,6 +6,7 @@ public class CardsControler : MonoBehaviour
 {
     public bool show = false;
     public bool materialFinded = false;
+    public static bool lockMouse = false;
     public int textureRand;
     public static int[] counters = new int[8];
     public CubesID mID;
@@ -19,17 +20,16 @@ public class CardsControler : MonoBehaviour
 
     void OnMouseDown()
     {
-        show = true;
-        if (General.cubesVerificator[0] == null)
-        General.cubesVerificator[0] = gameObject;
-        else if (General.cubesVerificator[1] == null)
+        if (!lockMouse)
         {
-            General.cubesVerificator[1] = gameObject;
-            Verification();
-        }
-        else
-        {
-            show = false;
+            show = true;
+            if (General.cubesVerificator[0] == null)
+                General.cubesVerificator[0] = gameObject;
+            else if (/*General.cubesVerificator[1] == null && */gameObject != General.cubesVerificator[0])
+            {
+                General.cubesVerificator[1] = gameObject;
+                Verification();
+            }
         }
     }
 
@@ -37,22 +37,39 @@ public class CardsControler : MonoBehaviour
     {
         if (General.cubesVerificator[0].GetComponent<CardsControler>().mID == General.cubesVerificator[1].GetComponent<CardsControler>().mID)
         {
-            StartCoroutine(CubeDestroyer(General.cubesVerificator[0].gameObject, General.cubesVerificator[1].gameObject));
+            //StartCoroutine(CubeDestroyer(General.cubesVerificator[0].gameObject, General.cubesVerificator[1].gameObject));
+            lockMouse = true;
+            Invoke("CubeDestroy", 1.7f);
         }
         else
         {
-            show = false;
-            General.cubesVerificator[0] = null;
-            General.cubesVerificator[1] = null;
+            lockMouse = true;
+            Invoke("NoConcidence", 1.7f);
         }
     }
 
-    IEnumerator CubeDestroyer(GameObject uno, GameObject dos)
+    public void CubeDestroy()
     {
-        yield return new WaitForSeconds(0.5f);
-        Destroy(uno);
-        Destroy(dos);
+        Destroy(General.cubesVerificator[0].gameObject);
+        Destroy(General.cubesVerificator[1].gameObject);
+        lockMouse = false;
     }
+
+    public void NoConcidence()
+    {
+        General.cubesVerificator[0].gameObject.GetComponent<CardsControler>().show = false;
+        General.cubesVerificator[1].gameObject.GetComponent<CardsControler>().show = false;
+        General.cubesVerificator[0] = null;
+        General.cubesVerificator[1] = null;
+        lockMouse = false;
+    }
+
+    //IEnumerator CubeDestroyer(GameObject uno, GameObject dos)
+    //{
+    //    yield return new WaitForSeconds(0.5f);
+    //    Destroy(uno);
+    //    Destroy(dos);
+    //}
 
     IEnumerator MaterialAssigner()
     {
