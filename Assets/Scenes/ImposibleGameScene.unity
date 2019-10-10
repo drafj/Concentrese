@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -158,8 +158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -305,8 +303,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -324,8 +320,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -343,8 +337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -610,8 +602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -721,8 +711,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -773,8 +761,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -954,6 +940,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a6e6e26c0ce6519468a6c7cea5bd4469, type: 2}
   - {fileID: 2100000, guid: afd15d9553390f4499538f4bfed90365, type: 2}
   win: {fileID: 577675744}
+  timeText: {fileID: 933064477}
 --- !u!114 &850937977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,8 +1302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -1367,8 +1352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -1445,8 +1428,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -1857,8 +1838,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -2152,8 +2131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -2322,8 +2299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -2374,8 +2349,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -2485,8 +2458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
-  timeText: {fileID: 0}
-  time: 3
   show: 0
   materialFinded: 0
   textureRand: 0

@@ -8,16 +8,16 @@ public class ButtonsManager : MonoBehaviour
     public void ImposibleLevel()
     {
         SceneManager.LoadScene("ImposibleGameScene");
-        CardsControler.time = 60;
+        General.time = 60;
     }
     public void HardLevel()
     {
         SceneManager.LoadScene("HardGameScene");
-        CardsControler.time = 80;
+        General.time = 80;
     }
     public void EasyLevel()
     {
         SceneManager.LoadScene("EasyGameScene");
-        CardsControler.time = 80;
+        General.time = 80;
     }
 }

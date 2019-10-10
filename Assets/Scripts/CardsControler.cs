@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class CardsControler : MonoBehaviour
 {
     public Image timeUp;
-    public Text timeText;
-    public static float time;
     public bool show = false;
     public bool materialFinded = false;
     public static bool lockMouse = false;
@@ -19,7 +17,6 @@ public class CardsControler : MonoBehaviour
     void Awake()
     {
         textureRand = Random.Range(0,8);
-        timeText = GameObject.Find("TimeText").GetComponent<Text>();
         timeUp = GameObject.Find("TimeUp").GetComponent<Image>();
     }
     void Start()
@@ -170,7 +167,7 @@ public class CardsControler : MonoBehaviour
 
     private void Update() 
     {
-        if (time <= 0 || HardLevel.attemptsCounter == 0)
+        if (General.time <= 0 || HardLevel.attemptsCounter == 0)
         {
             lockMouse = true;
             lockTime = true;
@@ -181,17 +178,10 @@ public class CardsControler : MonoBehaviour
             timeUp.GetComponent<Image>().gameObject.SetActive(true);
         }
 
-
-
-
         if (show)
             transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, Vector3.up * 180, 2 * Time.deltaTime));
         else
             transform.rotation = Quaternion.Euler(Vector3.Lerp(transform.rotation.eulerAngles, Vector3.zero, 2 * Time.deltaTime));
-        if (!lockTime)
-        time -= Time.deltaTime;
-
-        timeText.text = "Time Remaining: " + time.ToString("f0");
     }
 }
 

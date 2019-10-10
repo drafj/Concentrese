@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HardGameScene.unity
     guid: 02ca30d158633d9469ee91dfaac76263
+  - enabled: 1
+    path: Assets/Scenes/ImposibleGameScene.unity
+    guid: f8c41b605fb97a14bad749770f8e875a
   m_configObjects: {}
