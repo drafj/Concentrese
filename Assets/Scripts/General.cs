@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class General : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class General : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene("MenuScene");
+
         if (winConditional == 8)
         {
             CardsControler.lockTime = true;
