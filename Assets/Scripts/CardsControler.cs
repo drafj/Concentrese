@@ -16,12 +16,19 @@ public class CardsControler : MonoBehaviour
 
     void Awake()
     {
+        for (int i = 0; i < 8; i++)
+        {
+            counters[i] = 0;
+        }
+        lockMouse = false;
+        lockTime = false;
         textureRand = Random.Range(0,8);
         timeUp = GameObject.Find("TimeUp").GetComponent<Image>();
     }
     void Start()
     {
         timeUp.GetComponent<Image>().gameObject.SetActive(false);
+
         while (!materialFinded)
         {
             switch (textureRand)
@@ -116,6 +123,7 @@ public class CardsControler : MonoBehaviour
                     break;
             }
         }
+    
     }
 
     void OnMouseDown()
@@ -161,13 +169,13 @@ public class CardsControler : MonoBehaviour
         General.cubesVerificator[1].gameObject.GetComponent<CardsControler>().show = false;
         General.cubesVerificator[0] = null;
         General.cubesVerificator[1] = null;
-        --HardLevel.attemptsCounter;
+        --DificultLevel.attemptsCounter;
         lockMouse = false;
     }
 
     private void Update() 
     {
-        if (General.time <= 0 || HardLevel.attemptsCounter == 0)
+        if (General.time <= 0 || DificultLevel.attemptsCounter == 0)
         {
             lockMouse = true;
             lockTime = true;
