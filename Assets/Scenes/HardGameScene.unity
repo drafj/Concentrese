@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -303,6 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -320,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -337,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -547,8 +551,8 @@ RectTransform:
   m_Father: {fileID: 1459212224}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.0741402, y: 0.063294105}
-  m_AnchorMax: {x: 0.9258598, y: 0.9367059}
+  m_AnchorMin: {x: 0.114475764, y: 0.104179814}
+  m_AnchorMax: {x: 0.8855242, y: 0.894761}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -572,7 +576,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6b1f22bec5cf489448d250ceb81de141, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f00bbe65c11ec72489def41c7fa43a06, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -602,6 +606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -711,6 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -761,6 +767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -941,6 +948,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: afd15d9553390f4499538f4bfed90365, type: 2}
   win: {fileID: 577675744}
   timeText: {fileID: 933064477}
+  FinalText: {fileID: 1994457101}
 --- !u!114 &850937977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1302,6 +1310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -1352,6 +1361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -1428,6 +1438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -1466,7 +1477,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.11199261, y: 0.11202946}
   m_AnchorMax: {x: 0.8902535, y: 0.8900154}
-  m_AnchoredPosition: {x: 0.000012398, y: 0.0000069141}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 11.7, y: 6.578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256967826
@@ -1692,6 +1703,7 @@ RectTransform:
   - {fileID: 1005305589}
   - {fileID: 1256967825}
   - {fileID: 577675743}
+  - {fileID: 1994457100}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1838,6 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -2131,6 +2144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -2286,6 +2300,85 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 99.99999, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1994457099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1994457100}
+  - component: {fileID: 1994457102}
+  - component: {fileID: 1994457101}
+  m_Layer: 5
+  m_Name: FinalText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1994457100
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994457099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1459212224}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.26037866, y: 0.4192362}
+  m_AnchorMax: {x: 0.7418675, y: 0.5797046}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1994457101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994457099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b8d7d9ce070816f41bda47586600d778, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1994457102
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994457099}
+  m_CullTransparentMesh: 0
 --- !u!114 &1995492129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2299,6 +2392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -2349,6 +2443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0
@@ -2458,6 +2553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUp: {fileID: 0}
+  FinalText: {fileID: 0}
   show: 0
   materialFinded: 0
   textureRand: 0

@@ -11,6 +11,7 @@ public class General : MonoBehaviour
     public static GameObject[] cubesVerificator = new GameObject[2];
     public Image win;
     public Text timeText;
+    public Text FinalText;
 
     public static float time;
     public static int winConditional;
@@ -24,6 +25,7 @@ public class General : MonoBehaviour
             staticMaterials[i] = visibleMaterials[i];
         }
         win.GetComponent<Image>().gameObject.SetActive(false);
+        FinalText.text = "";
     }
 
     void Update()
@@ -32,10 +34,17 @@ public class General : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene("MenuScene");
 
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+            DificultLevel.attemptsCounter = 10;
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+            time = 80;
+
         if (winConditional == 8)
         {
             CardsControler.lockTime = true;
             win.GetComponent<Image>().gameObject.SetActive(true);
+            FinalText.text = "You Win";
         }
 
         if (!CardsControler.lockTime)

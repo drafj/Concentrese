@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CardsControler : MonoBehaviour
 {
     public Image timeUp;
+    public Text FinalText;
     public bool show = false;
     public bool materialFinded = false;
     public static bool lockMouse = false;
@@ -24,6 +25,7 @@ public class CardsControler : MonoBehaviour
         lockTime = false;
         textureRand = Random.Range(0,8);
         timeUp = GameObject.Find("TimeUp").GetComponent<Image>();
+        FinalText = GameObject.Find("FinalText").GetComponent<Text>();
     }
     void Start()
     {
@@ -151,6 +153,7 @@ public class CardsControler : MonoBehaviour
         else
         {
             lockMouse = true;
+            if (General.cubesVerificator[0] != null && General.cubesVerificator[1] != null)
             Invoke("NoConcidence", 1.7f);
         }
     }
@@ -159,6 +162,8 @@ public class CardsControler : MonoBehaviour
     {
         Destroy(General.cubesVerificator[0].gameObject);
         Destroy(General.cubesVerificator[1].gameObject);
+        General.cubesVerificator[0] = null;
+        General.cubesVerificator[1] = null;
         lockMouse = false;
         ++General.winConditional;
     }
@@ -184,6 +189,7 @@ public class CardsControler : MonoBehaviour
             if (General.cubesVerificator[1] != null)
                 General.cubesVerificator[1].gameObject.GetComponent<CardsControler>().show = false;
             timeUp.GetComponent<Image>().gameObject.SetActive(true);
+            FinalText.text = "You Lose";
         }
 
         if (show)
