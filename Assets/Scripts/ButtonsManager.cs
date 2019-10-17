@@ -23,4 +23,9 @@ public class ButtonsManager : MonoBehaviour
         DificultLevel.attemptsCounter = 10;
         SceneManager.LoadScene("EasyGameScene");
     }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
 }
