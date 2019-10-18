@@ -28,4 +28,9 @@ public class ButtonsManager : MonoBehaviour
     {
         SceneManager.LoadScene("MenuScene");
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

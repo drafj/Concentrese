@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class CardsControler : MonoBehaviour
 {
-    public Image timeUp;
-    public Text FinalText;
-    public bool show = false;
-    public bool materialFinded = false;
-    public static bool lockMouse = false;
-    public static bool lockTime = false;
-    public int textureRand;
-    public static int[] counters = new int[8];
-    public CubesID mID;
+    public Image timeUp;//imagen de derrota
+    public Text FinalText;//texto que muestra el mensaje final ("you win" y "you lose")
+    public bool show = false;//booleano que gira los cubos
+    public bool materialFinded = false;//variable para hacer parar el while que asigna los materiales
+    public static bool lockMouse = false;//booleano que bloquea el mouse para que solo se puedan voltear dos cubos consecutivos
+    public static bool lockTime = false;//bloquea el tiempo cuando se acaba el juego
+    public int textureRand;//randomizador que escoge el material
+    public static int[] counters = new int[8];//contador para poner un mismo material una cantidad maxima de dos veces
+    public CubesID mID;//se instancia el enum para asignarle las posiciones a los cubos
 
     void Awake()
     {
@@ -199,4 +199,4 @@ public class CardsControler : MonoBehaviour
     }
 }
 
-public enum CubesID {C1,C2,C3,C4,C5,C6,C7,C8}
+public enum CubesID {C1,C2,C3,C4,C5,C6,C7,C8}//enum que se asignan a los cubos para despues compararlos
