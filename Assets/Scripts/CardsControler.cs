@@ -17,15 +17,15 @@ public class CardsControler : MonoBehaviour
 
     void Awake()
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 8; i++)//reinicia el array ya que es estatico y las variable estaticas no se reinican cuando se carga la escena
         {
             counters[i] = 0;
         }
-        lockMouse = false;
-        lockTime = false;
-        textureRand = Random.Range(0,8);
-        timeUp = GameObject.Find("TimeUp").GetComponent<Image>();
-        FinalText = GameObject.Find("FinalText").GetComponent<Text>();
+        lockMouse = false;//reinicia la variable
+        lockTime = false;//reinicia la variable
+        textureRand = Random.Range(0,8);//randomiza la variable para escoger el material de manera random
+        timeUp = GameObject.Find("TimeUp").GetComponent<Image>();//encuentra la imagen de derrota
+        FinalText = GameObject.Find("FinalText").GetComponent<Text>();//encuentra el texto del fin del juego
     }
     void Start()
     {
