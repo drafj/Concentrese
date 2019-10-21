@@ -29,22 +29,22 @@ public class CardsControler : MonoBehaviour
     }
     void Start()
     {
-        timeUp.GetComponent<Image>().gameObject.SetActive(false);
+        timeUp.GetComponent<Image>().gameObject.SetActive(false);//se oculta el cartel de derrota para mostrarlo en caso de que el jugador pierda
 
-        while (!materialFinded)
+        while (!materialFinded)//while que encuentra el material y solo agrega dos materiales de cada uno
         {
             switch (textureRand)
             {
                 case 0:
                     if (counters[0] < 2)
                     {
-                        gameObject.GetComponent<Renderer>().material = General.staticMaterials[0];
-                        ++counters[0];
-                        materialFinded = true;
-                        mID = CubesID.C1;
+                        gameObject.GetComponent<Renderer>().material = General.staticMaterials[0];//se agrega el material del array de materiales estaticos del script general
+                        ++counters[0];//cuando encuentra el material se suma al contador de materiales agregados
+                        materialFinded = true;//cuando encuentra el material para el while
+                        mID = CubesID.C1;//cuando encuentra el material se le da una identidad con un enum
                     }
                     else
-                        textureRand = Random.Range(0, 8);
+                        textureRand = Random.Range(0, 8);//si este material ya esta agregado dos veces vuelve a empezar el while hasta que encuentre material
                     break;
                 case 1:
                     if (counters[1] < 2)
@@ -130,12 +130,12 @@ public class CardsControler : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!lockMouse)
+        if (!lockMouse)//solo entra cuando la variable que bloquea el mouse esta falso
         {
-            show = true;
-            if (General.cubesVerificator[0] == null)
+            show = true;//pone el booloeano show verdadero para que voltee el cubo
+            if (General.cubesVerificator[0] == null)//pregunta si la posicion 0 del array de gameobjects esta nulo, si es asi agrega el cubo a ese array para despues verificarlos
                 General.cubesVerificator[0] = gameObject;
-            else if (gameObject != General.cubesVerificator[0])
+            else if (gameObject != General.cubesVerificator[0])//si la posicion 0 esta llena entra a la posicion 1 y verifica los gameobjects de las dos posiciones (puse una condicional que consiste en que solo entre en la posicion uno cuando el 0 es diferente al que entrara a la posicion 1)
             {
                 General.cubesVerificator[1] = gameObject;
                 Verification();
@@ -143,44 +143,44 @@ public class CardsControler : MonoBehaviour
         }
     }
 
-    public void Verification()
+    public void Verification()//funcion que verifica si los dos cubos coinciden o no
     {
-        if (General.cubesVerificator[0].GetComponent<CardsControler>().mID == General.cubesVerificator[1].GetComponent<CardsControler>().mID)
+        if (General.cubesVerificator[0].GetComponent<CardsControler>().mID == General.cubesVerificator[1].GetComponent<CardsControler>().mID)//verifica si el cubo 0 tiene el mismo enum que el cubo 1 y si es asi los destruye
         {
-            lockMouse = true;
-            Invoke("CubeDestroy", 1.7f);
+            lockMouse = true;//bloquea el mouse para que no se puedan seleccionar mas cubos que los dos seleccionados
+            Invoke("CubeDestroy", 1.7f);//invoca la funcion que destruye los cubos despues de un tiempo para que su destruccion no sea inmediata ya que no se podria ver la coincidencia de los cubos
         }
         else
         {
-            lockMouse = true;
+            lockMouse = true;//bloquea el mouse para que no se puedan seleccionar mas cubos que los dos seleccionados
             if (General.cubesVerificator[0] != null && General.cubesVerificator[1] != null)
-            Invoke("NoConcidence", 1.7f);
+            Invoke("NoConcidence", 1.7f);//invoke que despues de un tiempo voltea los cubos de nuevo para que siga el juego
         }
     }
 
-    public void CubeDestroy()
+    public void CubeDestroy()//funcion que destruye los cubos
     {
         Destroy(General.cubesVerificator[0].gameObject);
         Destroy(General.cubesVerificator[1].gameObject);
         General.cubesVerificator[0] = null;
         General.cubesVerificator[1] = null;
-        lockMouse = false;
-        ++General.winConditional;
+        lockMouse = false;//desbloquea el mouse para proseguir el juego
+        ++General.winConditional;//aumenta el contador que al llegar a 8 ganas el juego(8 porque para ganar se deben hacer 8 aciertos
     }
 
-    public void NoConcidence()
+    public void NoConcidence()//funcion que voltea los cubos que no coinciden
     {
         General.cubesVerificator[0].gameObject.GetComponent<CardsControler>().show = false;
         General.cubesVerificator[1].gameObject.GetComponent<CardsControler>().show = false;
         General.cubesVerificator[0] = null;
         General.cubesVerificator[1] = null;
-        --DificultLevel.attemptsCounter;
-        lockMouse = false;
+        --DificultLevel.attemptsCounter;//en el nivel dificil e imposible se le resta un intento cuando los cubos no coinciden
+        lockMouse = false;//desbloquea el mouse para proseguir el juego
     }
 
     private void Update() 
     {
-        if (General.time <= 0 || DificultLevel.attemptsCounter == 0)
+        if (General.time <= 0 || DificultLevel.attemptsCounter == 0)//si el tiempo llega a 0 o los intentos llegan a 0 pierde el jugador
         {
             lockMouse = true;
             lockTime = true;
